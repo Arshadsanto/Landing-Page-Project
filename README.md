@@ -17,6 +17,6 @@
 * Navigation Menu was added dynamically as the section name.
 * Adeventlistener was added to show the effect when scrolling. 
 ## Reference
-* https://developer.mozilla.org/en-US/docs/Web/JavaScript
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
 * https://knowledge.udacity.com/questions/85408
 * https://www.w3schools.com/
