@@ -29,7 +29,14 @@ function viewPortActiveRemove(active, section){
 
 }
  viewPortActiveRemove();
- // scrolling nav bar
+
+ // scrolling nav bar with 
+
+navBarList.scrollIntoView({
+    behavior: "smooth",
+    block: "end", 
+    inline: "nearest"}
+    );
 
  function scrolling(){
     navBarList.addEventListener('click', (nav) => {
