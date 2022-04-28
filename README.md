@@ -1,6 +1,7 @@
 # Landing-page Udacity Project
-## HTML
 ### HTML + CSS + JS
+
+## HTML
 #### index.html
 * Page Title
 * 4 Sections
