@@ -39,9 +39,9 @@ navBarList.scrollIntoView({
     );
 
  function scrolling(){
-    navBarList.addEventListener('click', (nav) => {
+    navBarList.addEventListener('click', () => {
             for(i = 0 ; i<sections.length ; i++){
-                sections[i].addEventListener("scroll",(nav));
+                sections[i].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
             }
     });
 }
