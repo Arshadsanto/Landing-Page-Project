@@ -1,4 +1,5 @@
 
+
 const navBarList = document.getElementById('navbar__list');
 
 const sections = document.querySelectorAll('section');
@@ -10,8 +11,9 @@ const sections = document.querySelectorAll('section');
             listNav.style.fontSize = "20px";
             listNav.style.float= "left";
             listNav.innerHTML = `<a href="#${sections[i].getAttribute('id')}">${sections[i].getAttribute('data-nav')}</a>`;
+            scrolling(listNav, sections[i])
+            viewPortActiveRemove(listNav, sections[i]);
             navBarList.appendChild(listNav);
-        
         }
     }
     navMenuActive();
@@ -20,35 +22,27 @@ const sections = document.querySelectorAll('section');
 
 function viewPortActiveRemove(active, section){
     if(active == true){
-        section.classList.add('your-active-class');
+        navBarList.classList.add('your-active-class');
         section.style.backgroundColor = "red";
     }else if(active == false){
-        section.classList.remove('your-active-class');
+        navBarList.classList.remove('your-active-class');
         section.style.backgroundColor = "transparent";
     }
 
 }
  viewPortActiveRemove();
 
- // scrolling nav bar with 
+ // scrolling nav bar
 
-navBarList.scrollIntoView({
-    behavior: "smooth",
-    block: "end", 
-    inline: "nearest"}
-    );
-
- function scrolling(){
-    navBarList.addEventListener('click', () => {
-            for(i = 0 ; i<sections.length ; i++){
-                sections[i].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-            }
+function scrolling(item, section){
+    item.addEventListener('click', (area) => {
+        area.preventDefault();
+        section.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});  
     });
 }
 
-scrolling();
-
 // Position selected area
+
 document.addEventListener('scroll', function sectionActiveMode(){
     for (let i = 0; i < sections.length; i++) {
         const highlightedArea = parseFloat(sections[i].getBoundingClientRect().top);
@@ -59,6 +53,8 @@ document.addEventListener('scroll', function sectionActiveMode(){
                 }
             }
         }
-     viewPortActiveRemove(onscroll(), sections[i]);
+        viewPortActiveRemove(onscroll(), sections[i]);
+ 
+     
     }
 })
