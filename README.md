@@ -17,7 +17,7 @@
 * The sections are controlled with javascripts viewport and also by scrolling.
 * Navigation Menu was added dynamically as the section name.
 * Adeventlistener was added to show the effect when scrolling.
-##Dependencies: No 
+### Dependencies: No 
 ### Author: Md Arshadul Islam
 ## Reference
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
